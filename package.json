@@ -1,0 +1,29 @@
+{
+  "name": "ems",
+  "version": "1.0.0",
+  "description": "",
+  "main": "starter.js",
+  "scripts": {
+    "start": "nodemon starter.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adarshdch/ems.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adarshdch/ems/issues"
+  },
+  "homepage": "https://github.com/adarshdch/ems#readme",
+  "dependencies": {
+    "errorhandler": "^1.4.2",
+    "express": "^4.13.3",
+    "fs": "0.0.2",
+    "jade": "^1.11.0",    // Templating engine. 
+    "nib": "^1.1.0",      // CSS-preprocessor. If you're familiar with LESS or SASS, Stylus does very much the same job.
+    "path": "^0.12.7",
+    "stylus": "^0.53.0"   // Set of utilities for Stylus.
+  }
+}
