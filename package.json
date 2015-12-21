@@ -4,7 +4,7 @@
   "description": "",
   "main": "starter.js",
   "scripts": {
-    "start": "nodemon starter.js",
+    "start": "node starter.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,9 +21,9 @@
     "errorhandler": "^1.4.2",
     "express": "^4.13.3",
     "fs": "0.0.2",
-    "jade": "^1.11.0",    // Templating engine. 
-    "nib": "^1.1.0",      // CSS-preprocessor. If you're familiar with LESS or SASS, Stylus does very much the same job.
+    "jade": "^1.11.0",    
+    "nib": "^1.1.0",      
     "path": "^0.12.7",
-    "stylus": "^0.53.0"   // Set of utilities for Stylus.
+    "stylus": "^0.53.0"   
   }
 }
