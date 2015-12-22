@@ -1,5 +1,6 @@
-var express = require('express'),
-		router 	= express.Router(); 
+var express 			=	require('express'),
+		router 				= express.Router(),
+		childRouter 	= require('./child'); 
 
 router.use(function timeLog(req, res, next){
 	console.log('Time: ' + Date.now() + '  ' + req.originalUrl);
@@ -12,11 +13,7 @@ router.get('/', function(req, res){
 	});
 });
 
-router.get('/child', function(req, res){
-	res.render('child', {
-		title: 'Child'
-	});
-});
+router.use('/child', childRouter);
 
 router.all('*', function(req, res){
 	res.status(404)        // HTTP status 404: NotFound
