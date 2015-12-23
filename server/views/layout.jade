@@ -1,9 +1,32 @@
-doctype
-html
+mixin ie(condition)
+  | <!--[!{condition}]>
+  block
+  | <![endif]-->
+
+doctype html
+//[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7 ui-mobile-rendering" lang="en"> <![endif]
+//[if IE 7]>    <html class="no-js lt-ie9 lt-ie8 ui-mobile-rendering" lang="en"> <![endif]
+//[if IE 8]>    <html class="no-js lt-ie9 ui-mobile-rendering" lang="en"> <![endif]
+//[if gt IE 8]><!
+html.no-js.ui-mobile-rendering(lang='en')
+  //<![endif]
   head
     title #{title} - My Site
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
+    +ie('if lt IE 8')
+        p.browserupgrade
+          |You are using an 
+          strong
+            |outdated
+          |browser. Please 
+          a(href='http://browsehappy.com/')
+            |upgrade your browser
+          |to improve your experience.
+
+      //Add your site or application content here
+      p
+        |Hello world! This is HTML5 Boilerplate.
     header
       h1 My Site
     .container
@@ -12,4 +35,4 @@ html
       .sidebar
         block sidebar
     footer
-      p Running on node with Express, Jade and Stylus
+      p Running on node with Express 4, Jade and Stylus
