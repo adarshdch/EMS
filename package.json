@@ -18,12 +18,31 @@
   },
   "homepage": "https://github.com/adarshdch/ems#readme",
   "dependencies": {
+    "coffee-script": "^1.10.0",
     "errorhandler": "^1.4.2",
     "express": "^4.13.3",
     "fs": "0.0.2",
-    "jade": "^1.11.0",    
-    "nib": "^1.1.0",      
+    "jade": "^1.11.0",
+    "mocha": "^2.3.4",
+    "nib": "^1.1.0",
     "path": "^0.12.7",
-    "stylus": "^0.53.0"   
+    "stylus": "^0.53.0"
+  },
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "chai": "^3.4.1",
+    "grunt-autoprefixer": "^3.0.3",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-coffee": "^0.13.0",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-jade": "^0.15.0",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-stylus": "^0.22.0",
+    "grunt-contrib-uglify": "^0.11.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "load-grunt-tasks": "^3.4.0",
+    "mocha": "^2.3.4"
   }
 }
