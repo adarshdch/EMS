@@ -9,13 +9,13 @@ module.exports = (grunt) ->
 				cwd: 'build'
 				src: ['**/*.css']
 				dest: 'build'
+		clean:
+			build:
+				src: ['build']	# src of the clean configuration is set to "build" to remove the build directory.
 			stylesheets:
 				src: [ 'build/**/*.css', '!build/ems.css' ]
 			scripts:
 				src: [ 'build/**/*.js', '!build/ems.js' ]
-		clean:
-			build:
-				src: ['build']	# src of the clean configuration is set to "build" to remove the build directory.
 		copy:
 			build:
 				cwd: 'client'		# cwd points to a directory the source files are relative to.
@@ -36,7 +36,7 @@ module.exports = (grunt) ->
 					base: 'build'
 					hostname: '*'
 		cssmin:
-			build
+			build:
 				files:
 					'build/ems.css': [ 'build/**/*.css' ]
 		jade:
@@ -93,9 +93,8 @@ module.exports = (grunt) ->
 
 	grunt.registerTask 'stylesheets', 'Compiles css files.', [ 'stylus', 'autoprefixer', 'cssmin', 'clean:stylesheets' ]
 	grunt.registerTask 'scripts', 'Compiles the JavaScript files.', [ 'coffee' , 'uglify', 'clean:scripts']
-	grunt.registerTask 'build',	'Compiles all of the assets and copies the files to the build directory.', [ 'clean', 'copy', 'stylesheets', 'scripts', 'jade' ]
+	grunt.registerTask 'build',	'Compiles all of the assets and copies the files to the build directory.', [ 'clean:build', 'copy', 'stylesheets', 'scripts', 'jade' ]
 	grunt.registerTask 'default', 'Watches the project for changes, automatically builds them and runs a server.', [ 'build', 'connect', 'watch' ]
-
 
 
 # The default task runs `build` to create an initial build. Then it starts the Connect server. 
