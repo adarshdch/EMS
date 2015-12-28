@@ -1,27 +1,27 @@
 require.config({
-    baseUrl:"./js/app",
-    // 3rd party script alias names (Easier to type "jquery" than "libs/jquery, etc")
+    baseUrl: "js/app",
+    // 3rd party script alias names (Easier to type "jquery" than "lib/jquery, etc")
     // probably a good idea to keep version numbers in the file names for updates checking
     paths:{
+        "vendor": "lib/vendor",
         // Core Libraries
-        "jquery":"../libs/jquery",
-        "jqueryui":"../libs/jqueryui",
-        "jquerymobile":"../libs/jquery.mobile",
-        "underscore":"../libs/lodash",
-        "backbone":"../libs/backbone",
-        "marionette":"../libs/backbone.marionette",
-        "handlebars":"../libs/handlebars", 
-        "hbs":"../libs/hbs",
-        "i18nprecompile":"../libs/i18nprecompile",
-        "json2":"../libs/json2",
-        "jasmine": "../libs/jasmine",
-        "jasmine-html": "../libs/jasmine-html",
+        "jquery":"../lib/vendor/jquery/dist/jquery",
+        "jqueryui":"../lib/vendor/jquery-ui/jquery-ui",
+        "underscore":"../lib/vendor/lodash/lodash",
+        "backbone":"../lib/vendor/backbone/backbone",
+        "marionette":"../lib/vendor/backbone.marionette/lib/backbone.marionette",
+        "handlebars":"../lib/vendor/handlebars/handlebars", 
+        "hbs":"../lib/vendor/hbs/hbs",
+        "i18nprecompile":"../lib/vendor/i18nprecompile",
+        "json2":"../lib/vendor/json2",
+        "jasmine": "../lib/vendor/jasmine",
+        "jasmine-html": "../lib/vendor/jasmine-html",
 
         // Plugins
-        "backbone.validateAll":"../libs/plugins/Backbone.validateAll",
-        "bootstrap":"../libs/plugins/bootstrap",
-        "text":"../libs/plugins/text",
-        "jasminejquery": "../libs/plugins/jasmine-jquery"
+        //"backbone.validateAll":"../lib/vendor/plugins/Backbone.validateAll",
+        "bootstrap":"../lib/vendor/bootstrap/dist/js/bootstrap",
+        "text":"../lib/vendor/plugins/text",
+        "jasminejquery": "../lib/vendor/plugins/jasmine-jquery"
     },
 
     map: {
@@ -39,8 +39,6 @@ require.config({
         "bootstrap":["jquery"],
         // jQueryUI
         "jqueryui":["jquery"],
-        // jQuery mobile
-        "jquerymobile":["jqueryui"],
 
         // Backbone
         "backbone":{
