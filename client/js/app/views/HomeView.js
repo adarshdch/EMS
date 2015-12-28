@@ -1,5 +1,5 @@
-define(['backbone', 'marionette', 'jquery', 'hbs!templates/home'],
-    function (Backbone, Marionette, $, jqm, template) {
+define(['jquery', 'hbs!templates/home', 'backbone', 'marionette'],
+    function ($, template, Backbone, Marionette) {
         return Backbone.Marionette.ItemView.extend({
             template: template,
             initialize: function() {
