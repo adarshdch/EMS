@@ -2,9 +2,9 @@ define(['jquery', 'backbone', 'marionette', 'underscore', 'handlebars'],
     function ($, Backbone, Marionette, _, Handlebars) {
         var App = new Backbone.Marionette.Application();
 
-        App.on("start", function(options){
+        /*App.on("start", function(options){
             Backbone.history.start();
-        });
+        });*/
 
         function isMobile() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -13,12 +13,12 @@ define(['jquery', 'backbone', 'marionette', 'underscore', 'handlebars'],
 
         //Organize Application into regions corresponding to DOM elements
         //Regions can contain views, Layouts, or subregions nested as necessary
-        App.addRegions({
+        /*App.addRegions({
             RootLayout: "body"
-        });
+        });*/
 
         App.addInitializer(function () {
-            //Backbone.history.start();
+            Backbone.history.start();
         });
 
         App.mobile = isMobile();

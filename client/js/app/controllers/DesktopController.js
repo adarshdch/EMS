@@ -1,5 +1,5 @@
-define(['App', 'backbone', 'marionette', 'views/ShellView'],
-    function (App, Backbone, Marionette, ShellView) {
+define(['App', 'backbone', 'marionette', 'views/ShellView', 'views/ContactView', 'views/HomeView', 'views/SearchEmployeeView'],
+    function (App, Backbone, Marionette, ShellView, ContactView, HomeView, SearchEmployeeView) {
     return Backbone.Marionette.Controller.extend({
         initialize:function (options) {
             
@@ -9,7 +9,18 @@ define(['App', 'backbone', 'marionette', 'views/ShellView'],
 
         home: function()
         {
-            App.RootLayout.show(new ShellView());
+            App.RootLayout =  new ShellView();
+            App.RootLayout.render();
+            App.RootLayout.showChildView('contentRegion', new HomeView());
+            App.RootLayout.showChildView('mainRegion', new SearchEmployeeView());
+
+            //App.RootLayout.show(new ShellView());
+        },
+
+
+        contact: function(){
+          App.RootLayout.show(new ContactView());  
+
         },
 
         viewEmployee: function(id){

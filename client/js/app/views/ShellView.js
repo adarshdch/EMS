@@ -1,8 +1,10 @@
-define(['jquery', 'models/employee', 'hbs!templates/shell', 'views/HomeView', 'views/EmployeeListView', 'backbone', 'marionette'],
-		function($, models, template, HomeView, EmployeeListView, Backbone) {
+define(['jquery', 'models/employee', 'hbs!templates/shell', 'views/HomeView', 'views/SearchEmployeeView', 'backbone', 'marionette'],
+		function($, models, template, HomeView, SearchEmployeeView, Backbone) {
 				//ItemView provides some default rendering logic
 				return Backbone.Marionette.LayoutView.extend({
+						el: 'body',
 						template: template,
+
 						initialize: function()
 						{
 							this.employeeList = new models.EmployeeCollection();
@@ -10,35 +12,13 @@ define(['jquery', 'models/employee', 'hbs!templates/shell', 'views/HomeView', 'v
 
 						regions: {
 								contentRegion: "#content",
-								mainRegion: ".employee-list"
+								mainRegion: "#employee-dropdown"
 						},
 
 						onBeforeShow: function() {
-							var listView = new EmployeeListView({collection: this.employeeList});
 							this.showChildView('contentRegion', new HomeView());
-							this.showChildView('mainRegion', listView);
-						},
+							this.showChildView('mainRegion', new SearchEmployeeView());
+						}
 
-						events: {
-				            "keyup .search-query": "search",
-				            "keypress .search-query": "onkeypress"
-				        },
-
-				        search: function (event) {
-				        	//$('.dropdown').addClass('open');
-				        	//return;
-				            var key = $('#searchText').val();
-				            this.employeeList.fetch({reset: true, data: {name: key}, success: function () {
-				                setTimeout(function () {
-				                    $('.dropdown').addClass('open');
-				                });
-				            }});
-				        },
-
-				        onkeypress: function (event) {
-				            if (event.keyCode === 13) { // enter key pressed
-				                event.preventDefault();
-				            }
-				        }
 				});
 		});
