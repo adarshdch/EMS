@@ -11,12 +11,6 @@ define(['jquery', 'backbone', 'marionette', 'underscore', 'handlebars'],
             return ((/iPhone|iPod|iPad|Android|BlackBerry|Opera Mini|IEMobile/).test(userAgent));
         }
 
-        //Organize Application into regions corresponding to DOM elements
-        //Regions can contain views, Layouts, or subregions nested as necessary
-        /*App.addRegions({
-            RootLayout: "body"
-        });*/
-
         App.addInitializer(function () {
             Backbone.history.start();
         });
