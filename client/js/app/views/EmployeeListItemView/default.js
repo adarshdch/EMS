@@ -1,5 +1,6 @@
-define(['backbone', 'marionette', 'jquery', 'hbs!templates/employeeListItem'],
-    function (Backbone, Marionette, $, template) {
+define(['hbs!./default', 'jquery', 'backbone', 'marionette'],
+    function (template, $) {
+        
         return Backbone.Marionette.ItemView.extend({
             
             template: template,

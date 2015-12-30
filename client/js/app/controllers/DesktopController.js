@@ -1,26 +1,21 @@
-define(['App', 'backbone', 'marionette', 'views/ShellView', 'views/ContactView', 'views/HomeView', 'views/SearchEmployeeView'],
-    function (App, Backbone, Marionette, ShellView, ContactView, HomeView, SearchEmployeeView) {
+define(['App', 'backbone', 'marionette', 'views/MasterLayout/default', 'views/FooterLayout/default', 'views/HomeView/default', 'views/ContactView/default'],
+    function (App, Backbone, Marionette, MasterLayout, FooterLayout, HomeView, ContactView) {
     return Backbone.Marionette.Controller.extend({
         initialize:function (options) {
-            
-            
+            App.RootLayout =  new MasterLayout();
         },
         //gets mapped to in AppRouter's appRoutes
 
         home: function()
         {
-            App.RootLayout =  new ShellView();
             App.RootLayout.render();
             App.RootLayout.showChildView('contentRegion', new HomeView());
-            App.RootLayout.showChildView('mainRegion', new SearchEmployeeView());
-
-            //App.RootLayout.show(new ShellView());
         },
 
 
         contact: function(){
-          App.RootLayout.show(new ContactView());  
-
+          App.RootLayout.render();
+          App.RootLayout.showChildView('contentRegion', new ContactView());
         },
 
         viewEmployee: function(id){
