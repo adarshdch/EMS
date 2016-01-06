@@ -4,7 +4,7 @@ define(['backbone', 'marionette'], function(Backbone, Marionette) {
        appRoutes: {
            "": "home",
            "contact": "contact",
-           "employees/(:id)": "employees"
+           "employees(/:id)": "employees"
        }
 
        

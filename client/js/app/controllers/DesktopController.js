@@ -19,12 +19,25 @@ define(['App', 'models/employee', 'backbone', 'marionette', 'views/MasterLayout/
         },
 
         employees: function(id){
-            var employee = new models.Employee({id: id});
-            employee.fetch({
-                success: function (data) {
-                    App.RootLayout.showChildView('contentRegion', new EmployeeView({model: data}));
-                }
-            });
+            
+            if(id && id !== '')
+            {
+                var employee = new models.Employee({id: id});
+                employee.fetch({
+                    success: function (data) {
+                        App.RootLayout.showChildView('contentRegion', new EmployeeView({model: data}));
+                    }
+                });
+            }
+            else
+            {
+                var employee = new models.EmployeeCollection();
+                employee.fetch({
+                    success: function (data) {
+                        App.RootLayout.showChildView('contentRegion', new EmployeeView({model: data.models[0]}));
+                    }
+                });
+            }
         }
     });
 });

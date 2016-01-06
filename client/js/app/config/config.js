@@ -26,7 +26,7 @@ require.config({
 
     map: {
         '*': {
-            'models/employee': 'models/memory/employee'
+            'models/employee': 'models/json/employee'
         }
     },
     

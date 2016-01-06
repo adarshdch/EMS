@@ -1,7 +1,7 @@
 <div id="details" class="col-md-7">
-    <p><img src="pics/{{firstName}}_{{lastName}}.jpg" width="160" height="160"/></p>
+    <p><img src="pics/{{id}}.jpg" width="160" height="160"/></p>
     <h3>{{firstName}} {{lastName}}</h3>
-    <h4>{{title}}</h4>
+    <h4>{{designation}}</h4>
     <br>
     <table class="table table-striped">
         {{#if managerId}}
@@ -24,7 +24,7 @@
         </tr>
         <tr>
             <td>Twitter:</td>
-            <td><i class="icon-retweet"></i> <a href="">{{twitterId}}</a></td>
+            <td><i class="icon-retweet"></i> <a href="https://twitter.com/{{twitterId}}">{{twitterId}}</a></td>
         </tr>
     </table>
 
